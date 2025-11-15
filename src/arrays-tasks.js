@@ -57,8 +57,13 @@ function sumArrays(arr1, arr2) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] === value) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 /**
@@ -75,8 +80,11 @@ function findElement(/* arr, value */) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  return arr.reduce(
+    (count, current) => (current === item ? count + 1 : count),
+    0
+  );
 }
 
 /**
