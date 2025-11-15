@@ -239,8 +239,14 @@ function getHead(arr, n) {
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  const result = [];
+  let i = arr.length - n > 0 ? arr.length - n : 0;
+  while (i < arr.length) {
+    result[result.length] = arr[i];
+    i += 1;
+  }
+  return result;
 }
 
 /**
